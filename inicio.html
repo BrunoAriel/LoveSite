@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+  <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <title>
+        Nossa História ❤️
+      </title>
+	
+		
+      <style>
+		  
+		  
+		  
+        /* FUNDO EM DEGRADÊ */
+        body {
+            margin: 0;
+            font-family: Arial;
+            color: #333333;
+            background: linear-gradient(135deg, #fff0f5, #ffd6e8, #ffc1d6);
+            background-size: 400% 400%;
+            animation: fundoAnimado 12s ease infinite;
+        }
+       @keyframes fundoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* MENU */
+        .menu a {
+            text-decoration: none;
+            color: #FFAAAA;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 18px;
+            border-radius: 20px;
+            display: inline-block;
+            transition: 
+                transform 0.4s ease,
+                background-color 0.4s ease,
+                box-shadow 0.4s ease,
+                color 0.2s ease;
+        }
+
+        .menu a:hover {
+            transform: translateY(-6px) scale(1.05);
+            background-color: #ffe4ec;
+            box-shadow: 0 10px 20px rgba(230,57,115,0.3);
+        }
+
+        .menu a:active {
+            color: black;
+            background-color: #ffc1d6;
+        }
+
+        /* CONTADOR */
+        .contador {
+            background: rgba(255,255,255,0.7);
+            padding: 20px 30px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(230,57,115,0.3);
+            font-size: 20px;
+            margin-top: 20px;
+        }
+      </style>
+    </head>
+    <body>
+      <!-- MÚSICA DE FUNDO -->
+        <audio src="musica/musica2.mp3" autoplay loop>
+        </audio>
+        <!-- TOPO -->
+          <table width="100%" bgcolor="#e63973">
+            <tr>
+              <td align="center">
+                <br>
+                <h1>
+                  <font color="white">
+                    ❤️ Nossa História ❤️
+                  </font>
+                </h1>
+                <p>
+                  <font color="white">
+                    <i>
+                      Momentos que vivem para sempre
+                    </i>
+                  </font>
+                </p>
+                <br>
+                <div class="menu">
+                  <a href="inicio.html">
+                    🏠 Início
+                  </a>
+                  &nbsp;&nbsp;|&nbsp;&nbsp;
+                  <a href="fotos01.html">
+                    📸 Fotos Pagina 1
+                  </a>
+                  &nbsp;&nbsp;|&nbsp;&nbsp;
+                  <a href="fotos.html">
+                    📸 Fotos Pagina 2
+                  </a>
+                  &nbsp;&nbsp;|&nbsp;&nbsp;
+                  <a href="contato.html">
+                    💬 Mensagens
+                  </a>
+                </div>
+                <br>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <br>
+          <br>
+          <!-- CONTEÚDO -->
+            <center>
+              <h2>
+                💖 Nossos dias 💖
+              </h2>
+              <!-- CONTADOR -->
+                <div class="contador" id="contador">
+                  Carregando contador...
+                </div>
+              </center>
+              <br>
+              <br>
+              <br>
+              <!-- RODAPÉ -->
+                <table width="100%" bgcolor="#e63973">
+                  <tr>
+                    <td align="center">
+                      <h2>
+                        💌 Para você
+                      </h2>
+                      <p>
+                        Cada sorriso, cada abraço e cada momento ao seu lado
+                        <br>
+                        são lembranças que guardo no coração.
+                        <br>
+                        Obrigado por fazer parte da minha vida ❤️
+                      </p>
+                      <hr width="40%">
+                      <p>
+                        <small>
+                          Feito com amor 💕
+                        </small>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                <!-- SCRIPT DO CONTADOR -->
+                  <script>
+                    // ⚠️ MUDE A DATA AQUI (ANO, MÊS-1, DIA)
+        const dataInicio = new Date(2025, 01, 22); // 01/01/2022
+
+        function atualizarContador() {
+            const hoje = new Date();
+
+            let anos = hoje.getFullYear() - dataInicio.getFullYear();
+            let meses = hoje.getMonth() - dataInicio.getMonth();
+            let dias = hoje.getDate() - dataInicio.getDate();
+
+            if (dias
+                    < 0) {
+                meses--;
+                const ultimoMes = new Date(hoje.getFullYear(), hoje.getMonth(), 0).getDate();
+                dias += ultimoMes;
+            }
+
+            if (meses < 0) {
+                anos--;
+                meses += 12;
+            }
+
+            document.getElementById("contador").innerHTML =
+                `Estamos juntos há <br>
+                      <b>
+                        ${anos}
+                      </b>
+                      anos,
+                      <b>
+                        ${meses}
+                      </b>
+                      meses e
+                      <b>
+                        ${dias}
+                      </b>
+                      dias 💕`;
+        }
+
+        atualizarContador();
+        setInterval(atualizarContador, 1000);
+                    </script>
+                  </body>
+                </html>
